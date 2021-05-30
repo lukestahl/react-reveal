@@ -1,5 +1,9 @@
 # React Reveal
 
+# Fixed Verison
+
+Now working with React 17
+
 [React Reveal](https://www.react-reveal.com/) is
 an animation framework for React. It's MIT licensed, has a tiny footprint
 and written specifically for React in ES6. It can be used to create various cool reveal
@@ -10,6 +14,7 @@ the [Github repository](https://github.com/rnosov/react-reveal).
 ## Live Examples
 
 A number of simple effect examples:
+
 - [Fade](https://www.react-reveal.com/examples/common/fade/)
 - [Flip](https://www.react-reveal.com/examples/common/flip/)
 - [Rotate](https://www.react-reveal.com/examples/common/rotate/)
@@ -19,9 +24,9 @@ A number of simple effect examples:
 
 Also, there are more complicated examples of [animated form errors](https://www.react-reveal.com/examples/advanced/form/) and a [todo app](https://www.react-reveal.com/examples/advanced/todo/).
 
-## Search Engine Visibility 
+## Search Engine Visibility
 
-`react-reveal` is regularly checked against googlebot in the Google Search Console to make sure that googlebot can see the content in the revealed elements. 
+`react-reveal` is regularly checked against googlebot in the Google Search Console to make sure that googlebot can see the content in the revealed elements.
 
 ## Full Documentation
 
@@ -46,10 +51,10 @@ yarn add react-reveal
 Import effects from [React Reveal](https://www.npmjs.com/package/react-reveal) to your project. Lets try `Zoom` effect first:
 
 ```javascript
-import Zoom from 'react-reveal/Zoom';
+import Zoom from "react-reveal/Zoom";
 ```
 
-Place the following code somewhere in your `render` method: 
+Place the following code somewhere in your `render` method:
 
 ```jsx
 <Zoom>
@@ -64,7 +69,7 @@ You should see zooming animation that reveals text inside the tag. You can chang
 You may just wrap your custom React component with the effect of your choosing like so:
 
 ```jsx
-<Zoom>  
+<Zoom>
   <CustomComponent />
 </Zoom>
 ```
@@ -74,7 +79,7 @@ In such case, in the resulting `<CustomComponent />` HTML markup will be wrapped
 ```jsx
 <Zoom>
   <section>
-    <CustomComponent />   
+    <CustomComponent />
   </section>
 </Zoom>
 ```
@@ -84,7 +89,7 @@ or if you want to customize `div` props:
 ```jsx
 <Zoom>
   <div className="some-class">
-    <CustomComponent />   
+    <CustomComponent />
   </div>
 </Zoom>
 ```
@@ -95,7 +100,11 @@ If you want to reveal an image you can wrap `img` tag with with the desired `rea
 
 ```jsx
 <Zoom>
-  <img height="300" width="400" src="https://source.unsplash.com/random/300x400" />
+  <img
+    height="300"
+    width="400"
+    src="https://source.unsplash.com/random/300x400"
+  />
 </Zoom>
 ```
 
@@ -120,7 +129,7 @@ will be equivalent to:
 </Zoom>
 <Zoom>
   <div>Second Child</div>
-</Zoom>  
+</Zoom>
 ```
 
 If you don't want this to happen, you should wrap multiple children in a `div` tag:
@@ -134,14 +143,13 @@ If you don't want this to happen, you should wrap multiple children in a `div` t
 </Zoom>
 ```
 
-
 ## Server Side Rendering
 
-`react-reveal` supports server side rendering out of the box. In some cases, when the javascript bundle arrives much later than the HTML&CSS it might cause a flickering. To prevent this `react-reveal` will not apply reveal effects on the initial load. 
+`react-reveal` supports server side rendering out of the box. In some cases, when the javascript bundle arrives much later than the HTML&CSS it might cause a flickering. To prevent this `react-reveal` will not apply reveal effects on the initial load.
 Another option is to apply gentle fadeout effect on the initial render. You can force it on all `react-reveal` elements by placing the following code somewhere near the entry point of your app:
 
 ```jsx
-import config from 'react-reveal/globals';
+import config from "react-reveal/globals";
 
 config({ ssrFadeout: true });
 ```
@@ -149,7 +157,9 @@ config({ ssrFadeout: true });
 Or you you can do it on a per element basis using `ssrFadeout` prop:
 
 ```jsx
-<Zoom ssrFadeout><h1>Content</h1></Zoom>
+<Zoom ssrFadeout>
+  <h1>Content</h1>
+</Zoom>
 ```
 
 One last option is to use `ssrReveal` prop. If enabled, this option will suppress both flickering and `ssrFadeout` effect. The unfortunate drawback of this option is that the revealed content will appear hidden to Googlebot and to anyone with javascript switched off. So it will makes sense for images and/or headings which are duplicated elsewhere on the page.

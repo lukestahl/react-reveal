@@ -1,8 +1,8 @@
 {
-  "name": "react-reveal",
+  "name": "@stahl.luke/react-reveal",
   "version": "1.2.2",
   "author": "Roman Nosov <rnosov@gmail.com>",
-  "description": "Really simple way to add reveal on scroll animation to your React app.",
+  "description": "Fixed: React 17. Really simple way to add reveal on scroll animation to your React app.",
   "license": "MIT",
   "keywords": [
     "react",
