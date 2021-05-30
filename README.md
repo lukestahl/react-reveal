@@ -1,6 +1,6 @@
 # React Reveal
 
-# Fixed Verison
+# Fixed Version
 
 Now working with React 17
 
